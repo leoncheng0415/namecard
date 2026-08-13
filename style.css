@@ -1,0 +1,78 @@
+/* 全域重置：瀏覽器預設每個元素都有奇怪的邊距，
+   先歸零，之後排版比較好控制 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 讓 padding 不會撐大元素寬度，算尺寸比較直覺 */
+}
+
+body {
+  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
+  background: #f2f2f5; /* 淺灰底色 */
+
+  /* flexbox：讓卡片在整個畫面「水平置中、垂直置中」
+     display:flex 把 body 變成一個彈性容器，
+     justify-content 控制水平方向、align-items 控制垂直方向 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* 100vh = 螢幕可視高度的 100%，確保滿版不會有空白 */
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 380px; /* 手機直式名片的合理寬度上限，電腦開也不會過寬 */
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 28px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* 淡淡陰影，讓卡片有浮起的層次感 */
+}
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%; /* 50% 讓正方形圖片變成圓形 */
+  object-fit: cover;  /* 圖片比例不對時，裁切填滿而不是變形 */
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+
+.bio {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* 連結清單：預設 <ul> 會有項目符號跟縮排，先去掉 */
+.links {
+  list-style: none;
+  display: flex;
+  flex-direction: column; /* 垂直排列，符合直式名片的需求 */
+  gap: 12px; /* 每個連結按鈕之間的間距 */
+}
+
+.links a {
+  display: block;
+  padding: 14px;
+  background: #1a1a1a;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: transform 0.15s ease, opacity 0.15s ease; /* 讓 hover 效果變化得平滑 */
+}
+
+.links a:hover,
+.links a:active {
+  transform: scale(0.97); /* 按下去有輕微縮小的回饋感 */
+  opacity: 0.85;
+}

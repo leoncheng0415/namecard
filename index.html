@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport 這行很重要：告訴手機瀏覽器「照手機螢幕寬度顯示」，
+       不然手機會誤以為要顯示成電腦版的寬版面，字會變得很小 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leon Cheng</title>
+  <!-- 引入外部的 CSS 檔案，負責這個頁面的外觀 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- <main> 是「主要內容」的語意化標籤，
+       用語意化標籤（而不是全部用 <div>）能讓瀏覽器、
+       搜尋引擎、螢幕報讀器更容易理解頁面結構 -->
+  <main class="card">
+
+    <!-- 大頭照：先用預留位置，之後換成你的真實照片 -->
+    <img class="avatar" src="https://placehold.co/200x200?text=Photo" alt="Leon Cheng 的大頭照">
+
+    <h1>Leon Cheng</h1>
+    <p class="bio">這裡放一兩句自我介紹，例如你的職稱或一句自我描述。</p>
+
+    <!-- 用 <ul>（無序清單）放連結，每個連結是一個 <li>，
+         語意上「這是一組相關的連結列表」 -->
+    <ul class="links">
+      <li><a href="https://line.me/ti/p/你的LineID" target="_blank">加我 Line</a></li>
+      <li><a href="https://instagram.com/你的IG帳號" target="_blank">Instagram</a></li>
+      <li><a href="https://linkedin.com/in/你的LinkedIn帳號" target="_blank">LinkedIn</a></li>
+      <li><a href="mailto:leoncheng910415@gmail.com">Email 聯絡我</a></li>
+      <li><a href="tel:+886900000000">電話聯絡</a></li>
+    </ul>
+
+  </main>
+
+</body>
+</html>
