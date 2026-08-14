@@ -23,24 +23,47 @@ body {
   max-width: 380px; /* 手機直式名片的合理寬度上限，電腦開也不會過寬 */
   background: #ffffff;
   border: 1px solid #e2e2df; /* 用細邊框取代陰影，是這個風格的重點 */
-  padding: 48px 32px;
-  text-align: center;
+  overflow: hidden; /* 讓封面照片的直角邊緣不會超出卡片本身的邊框 */
+}
+
+/* 封面照片區：照片滿版鋪在卡片最上方，大頭貼疊在下緣 */
+.cover {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  background: #eeeeec;
+}
+
+.cover-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .avatar {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%; /* 圓形頭貼 */
+  position: absolute;
+  left: 32px;
+  bottom: -45px; /* 往下疊出封面照片邊緣，是這個排版的特色 */
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #ffffff; /* 白色描邊，讓大頭貼跟封面照片有明確分隔 */
   /* object-fit: contain 讓整張照片完整顯示，不會裁到頭髮，
-     照片背景是白色、跟卡片背景一致，所以看起來仍然融合自然 */
+     照片背景是白色、跟描邊顏色一致，所以看起來仍然融合自然 */
   object-fit: contain;
   background: #ffffff;
-  margin-bottom: 22px;
+}
+
+/* 內文區：留出足夠的上方空間，避免被疊加的大頭貼蓋住 */
+.content {
+  padding: 58px 32px 40px;
+  text-align: left;
 }
 
 h1 {
   font-family: 'Playfair Display', serif; /* 襯線字體，是 Editorial 風格的核心 */
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 600;
   color: #111111;
   letter-spacing: 0.5px;
@@ -59,7 +82,7 @@ h1 {
   width: 100%; /* 延伸到跟卡片內距同寬，當作標題區與內文之間的分隔線 */
   height: 1px;
   background: #1a1a1a;
-  margin: 18px auto;
+  margin: 18px 0;
 }
 
 .bio {
@@ -67,49 +90,43 @@ h1 {
   color: #555555;
   line-height: 1.7;
   text-align: justify; /* 兩端對齊：每行左右切齊，最後一行維持自然長度 */
-  margin-bottom: 8px;
-}
-
-/* Email、電話：純文字呈現，不做成按鈕方塊 */
-.contact {
-  font-size: 12.5px;
-  color: #8a8a86;
-  line-height: 1.9;
   margin-bottom: 26px;
 }
 
-.contact a {
-  color: #8a8a86;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-/* 連結清單：預設 <ul> 會有項目符號跟縮排，先去掉 */
-.links {
+/* 聯絡資訊條列：深色圓形圖示 + 文字，一列一項，靠左對齊 */
+.contact-list {
   list-style: none;
   display: flex;
-  flex-direction: column; /* 垂直排列，符合直式名片的需求 */
-  gap: 10px;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.links a {
-  display: block;
-  padding: 13px;
-  border: 1px solid #1a1a1a; /* 用外框按鈕取代實心按鈕，維持整體低彩度質感 */
-  color: #1a1a1a;
-  text-decoration: none;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  font-weight: 600;
-  transition: all 0.2s ease;
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-.links a:hover,
-.links a:active {
+.contact-list .icon {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   background: #1a1a1a;
   color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.contact-list a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
 }
