@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <!-- viewport 這行很重要：告訴手機瀏覽器「照手機螢幕寬度顯示」，
        不然手機會誤以為要顯示成電腦版的寬版面，字會變得很小 -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lee Fan Cheng</title>
+  <!-- Editorial serif 風格用到 Playfair Display（標題）+ Inter（內文）兩款 Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <!-- 引入外部的 CSS 檔案，負責這個頁面的外觀 -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,15 +23,18 @@
 
     <h1>Lee Fan Cheng</h1>
     <p class="title">NUS MiM Candidate &middot; Deloitte Intern</p>
+
+    <div class="divider"></div>
+
     <p class="bio">National Chengchi University graduate in Sociology &amp; Economics. Former intern at Ogilvy and Dentsu, currently interning at Deloitte, and incoming Master in Management candidate at NUS Business School.</p>
 
-    <!-- Email 跟電話改成純文字呈現在自我介紹下方，不再用按鈕方塊 -->
+    <!-- Email 跟電話用純文字呈現，不做成按鈕方塊 -->
     <p class="contact">
       <a href="mailto:leoncheng910415@gmail.com">leoncheng910415@gmail.com</a><br>
       <a href="tel:+886966652623">+886 966 652 623</a>
     </p>
 
-    <!-- 社群連結維持按鈕方塊呈現，LinkedIn 放中間、Instagram 移到最下面 -->
+    <!-- 社群連結：LinkedIn 放中間、Instagram 放最下面 -->
     <ul class="links">
       <li><a href="https://line.me/ti/p/c1J_W6MrV8" target="_blank">Line</a></li>
       <li><a href="https://www.linkedin.com/in/lee-fan-cheng-062545385/" target="_blank">LinkedIn</a></li>
