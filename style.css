@@ -30,7 +30,7 @@ body {
 .avatar {
   width: 130px;
   height: 130px;
-  border-radius: 6px; /* 方中帶圓角，比正圓形更有雜誌排版的感覺 */
+  border-radius: 50%; /* 圓形頭貼 */
   /* object-fit: contain 讓整張照片完整顯示，不會裁到頭髮，
      照片背景是白色、跟卡片背景一致，所以看起來仍然融合自然 */
   object-fit: contain;
