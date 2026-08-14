@@ -7,8 +7,8 @@
 }
 
 body {
-  font-family: -apple-system, "Segoe UI", "PingFang TC", "Microsoft JhengHei", sans-serif;
-  background: #f2f2f5; /* 淺灰底色 */
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: #f6f6f4; /* Editorial 風格慣用的米白底色，比純白更柔和 */
 
   /* flexbox：讓卡片在整個畫面「水平置中、垂直置中」 */
   display: flex;
@@ -22,53 +22,62 @@ body {
   width: 100%;
   max-width: 380px; /* 手機直式名片的合理寬度上限，電腦開也不會過寬 */
   background: #ffffff;
-  border-radius: 20px;
-  padding: 40px 28px;
+  border: 1px solid #e2e2df; /* 用細邊框取代陰影，是這個風格的重點 */
+  padding: 48px 32px;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* 淡淡陰影，讓卡片有浮起的層次感 */
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%; /* 50% 讓正方形圖片變成圓形 */
-  /* object-fit: contain 讓整張照片完整顯示在框內，不會裁到頭髮，
-     因為照片背景是白色、跟卡片背景一致，看起來會很自然 */
-  object-fit: contain;
-  background: #ffffff;
-  margin-bottom: 16px;
+  width: 110px;
+  height: 110px;
+  border-radius: 6px; /* 方中帶圓角，比正圓形更有雜誌排版的感覺 */
+  object-fit: cover;
+  filter: grayscale(100%) contrast(1.05); /* 去色處理，呼應黑白灰的主題 */
+  margin-bottom: 22px;
 }
 
 h1 {
-  font-size: 22px;
-  margin-bottom: 4px;
-  color: #1a1a1a;
+  font-family: 'Playfair Display', serif; /* 襯線字體，是 Editorial 風格的核心 */
+  font-size: 26px;
+  font-weight: 600;
+  color: #111111;
+  letter-spacing: 0.5px;
 }
 
 .title {
-  font-size: 13px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #8a8a86;
+  margin-top: 8px;
   font-weight: 600;
-  color: #555;
-  margin-bottom: 10px;
+}
+
+.divider {
+  width: 36px;
+  height: 1px;
+  background: #1a1a1a;
+  margin: 18px auto;
 }
 
 .bio {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 18px;
-  line-height: 1.6;
+  font-size: 13.5px;
+  color: #555555;
+  line-height: 1.7;
+  text-align: justify; /* 兩端對齊：每行左右切齊，最後一行維持自然長度 */
+  margin-bottom: 8px;
 }
 
 /* Email、電話：純文字呈現，不做成按鈕方塊 */
 .contact {
-  font-size: 13px;
-  color: #666;
+  font-size: 12.5px;
+  color: #8a8a86;
   line-height: 1.9;
-  margin-bottom: 28px;
+  margin-bottom: 26px;
 }
 
 .contact a {
-  color: #666;
+  color: #8a8a86;
   text-decoration: none;
 }
 
@@ -81,23 +90,24 @@ h1 {
   list-style: none;
   display: flex;
   flex-direction: column; /* 垂直排列，符合直式名片的需求 */
-  gap: 12px; /* 每個連結按鈕之間的間距 */
+  gap: 10px;
 }
 
 .links a {
   display: block;
-  padding: 14px;
-  background: #1a1a1a;
-  color: #ffffff;
+  padding: 13px;
+  border: 1px solid #1a1a1a; /* 用外框按鈕取代實心按鈕，維持整體低彩度質感 */
+  color: #1a1a1a;
   text-decoration: none;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 500;
-  transition: transform 0.15s ease, opacity 0.15s ease; /* 讓 hover 效果變化得平滑 */
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
 .links a:hover,
 .links a:active {
-  transform: scale(0.97); /* 按下去有輕微縮小的回饋感 */
-  opacity: 0.85;
+  background: #1a1a1a;
+  color: #ffffff;
 }
