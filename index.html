@@ -9,6 +9,8 @@
   <!-- Editorial serif 風格用到 Playfair Display（標題）+ Inter（內文）兩款 Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome：提供聯絡資訊列表要用的圖示（信封、電話、Line、LinkedIn、Instagram） -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- 引入外部的 CSS 檔案，負責這個頁面的外觀 -->
   <link rel="stylesheet" href="style.css">
 </head>
@@ -19,27 +21,46 @@
        搜尋引擎、螢幕報讀器更容易理解頁面結構 -->
   <main class="card">
 
-    <img class="avatar" src="photo.jpg" alt="Lee Fan Cheng">
+    <!-- 封面照片＋大頭貼疊加：大頭貼目前先用預留位置，等你提供照片後再替換 cover.jpg -->
+    <div class="cover">
+      <img class="cover-photo" src="https://placehold.co/600x300/eeeeec/999999?text=Cover+Photo" alt="">
+      <img class="avatar" src="photo.jpg" alt="Lee Fan Cheng">
+    </div>
 
-    <h1>Lee Fan Cheng</h1>
-    <p class="title">NUS MiM Candidate &middot; Deloitte Intern</p>
+    <div class="content">
 
-    <div class="divider"></div>
+      <h1>Lee Fan Cheng</h1>
+      <p class="title">NUS MiM Candidate &middot; Deloitte Intern</p>
 
-    <p class="bio">National Chengchi University graduate in Sociology &amp; Economics. Former intern at Ogilvy and Dentsu, currently interning at Deloitte, and incoming Master in Management candidate at NUS Business School.</p>
+      <div class="divider"></div>
 
-    <!-- Email 跟電話用純文字呈現，不做成按鈕方塊 -->
-    <p class="contact">
-      <a href="mailto:leoncheng910415@gmail.com">leoncheng910415@gmail.com</a><br>
-      <a href="tel:+886966652623">+886 966 652 623</a>
-    </p>
+      <p class="bio">National Chengchi University graduate in Sociology &amp; Economics. Former intern at Ogilvy and Dentsu, currently interning at Deloitte, and incoming Master in Management candidate at NUS Business School.</p>
 
-    <!-- 社群連結：LinkedIn 放中間、Instagram 放最下面 -->
-    <ul class="links">
-      <li><a href="https://line.me/ti/p/c1J_W6MrV8" target="_blank">Line</a></li>
-      <li><a href="https://www.linkedin.com/in/lee-fan-cheng-062545385/" target="_blank">LinkedIn</a></li>
-      <li><a href="https://www.instagram.com/_leon_0415/" target="_blank">Instagram</a></li>
-    </ul>
+      <!-- 聯絡資訊統一改成「圖示＋文字」條列，參考 nfc-business.vip 的版面 -->
+      <ul class="contact-list">
+        <li>
+          <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+          <a href="mailto:leoncheng910415@gmail.com">leoncheng910415@gmail.com</a>
+        </li>
+        <li>
+          <span class="icon"><i class="fa-solid fa-phone"></i></span>
+          <a href="tel:+886966652623">+886 966 652 623</a>
+        </li>
+        <li>
+          <span class="icon"><i class="fa-brands fa-line"></i></span>
+          <a href="https://line.me/ti/p/c1J_W6MrV8" target="_blank">Line</a>
+        </li>
+        <li>
+          <span class="icon"><i class="fa-brands fa-linkedin-in"></i></span>
+          <a href="https://www.linkedin.com/in/lee-fan-cheng-062545385/" target="_blank">LinkedIn</a>
+        </li>
+        <li>
+          <span class="icon"><i class="fa-brands fa-instagram"></i></span>
+          <a href="https://www.instagram.com/_leon_0415/" target="_blank">Instagram</a>
+        </li>
+      </ul>
+
+    </div>
 
   </main>
 
