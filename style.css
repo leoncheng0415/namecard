@@ -21,7 +21,7 @@ body {
 .card {
   width: 100%;
   max-width: 380px; /* 手機直式名片的合理寬度上限，電腦開也不會過寬 */
-  background: #ffffff;
+  background: #faf8f4; /* 米白色，避免跟大頭貼的白色背景疊在一起太搶眼 */
   border: 1px solid #e2e2df; /* 用細邊框取代陰影，是這個風格的重點 */
   overflow: hidden; /* 讓封面照片的直角邊緣不會超出卡片本身的邊框 */
 }
@@ -48,9 +48,9 @@ body {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  border: 4px solid #ffffff; /* 白色描邊，讓大頭貼跟封面照片有明確分隔 */
+  border: 4px solid #faf8f4; /* 描邊顏色跟卡片背景一致 */
   /* object-fit: contain 讓整張照片完整顯示，不會裁到頭髮，
-     照片背景是白色、跟描邊顏色一致，所以看起來仍然融合自然 */
+     照片背景是白色、跟描邊顏色相近，所以看起來仍然融合自然 */
   object-fit: contain;
   background: #ffffff;
 }
@@ -90,43 +90,50 @@ h1 {
   color: #555555;
   line-height: 1.7;
   text-align: justify; /* 兩端對齊：每行左右切齊，最後一行維持自然長度 */
+  margin-bottom: 8px;
+}
+
+/* Email、電話：純文字呈現，不做成按鈕方塊 */
+.contact {
+  font-size: 12.5px;
+  color: #8a8a86;
+  line-height: 1.9;
   margin-bottom: 26px;
 }
 
-/* 聯絡資訊條列：深色圓形圖示 + 文字，一列一項，靠左對齊 */
-.contact-list {
+.contact a {
+  color: #8a8a86;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* 連結清單：預設 <ul> 會有項目符號跟縮排，先去掉 */
+.links {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  flex-direction: column; /* 垂直排列，符合直式名片的需求 */
+  gap: 10px;
 }
 
-.contact-list li {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.links a {
+  display: block;
+  padding: 13px;
+  border: 1px solid #1a1a1a; /* 用外框按鈕取代實心按鈕，維持整體低彩度質感 */
+  color: #1a1a1a;
+  text-decoration: none;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
-.contact-list .icon {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+.links a:hover,
+.links a:active {
   background: #1a1a1a;
   color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-}
-
-.contact-list a {
-  color: #333333;
-  text-decoration: none;
-  font-size: 13.5px;
-  font-weight: 500;
-}
-
-.contact-list a:hover {
-  text-decoration: underline;
 }
