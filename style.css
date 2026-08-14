@@ -51,6 +51,7 @@ body {
   border: 4px solid #faf8f4; /* 描邊顏色跟卡片背景一致 */
   /* object-fit: cover 讓照片完整填滿圓形範圍，不留空隙 */
   object-fit: cover;
+  object-position: center 20%; /* 往上偏移取景範圍，避免頭頂頭髮貼邊 */
   background: #ffffff;
 }
 
